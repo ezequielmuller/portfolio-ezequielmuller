@@ -1,102 +1,32 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <q-layout view="lHh Lpr lFf" class="bg-secondary">
+    <q-header elevated
+      style="max-width: 1000px; width: 100%; margin: 0 auto; border-radius: 0 0 20px 20px; overflow: hidden">
+      <q-toolbar class="bg-white text-black q-pa-md">
+        <q-btn flat dense round icon="menu" aria-label="Menu" />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title class="text-center text-primary"> Portfólio </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div class="row items-center q-gutter-sm">
+          <q-btn flat dense round icon="mdi-whatsapp" aria-label="WhatsApp" @click="goTo('https://wa.me/SEUNUMERO')" />
+          <q-btn flat dense round icon="mdi-linkedin" aria-label="LinkedIn"
+            @click="goTo('https://www.linkedin.com/in/SEULINK/')" />
+          <q-btn flat dense round icon="mdi-instagram" aria-label="Instagram"
+            @click="goTo('https://instagram.com/SEUINSTAGRAM')" />
+          <q-btn flat dense round icon="mdi-github" aria-label="GitHub" @click="goTo('https://github.com/SEUGITHUB')" />
+          <q-btn flat dense round icon="mdi-email" aria-label="Email" @click="goTo('mailto:SEUEMAIL@example.com')" />
+        </div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
     <q-page-container>
-      <router-view />
+      <router-view class="bg-secondary text-primary" />
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
-
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
-const leftDrawerOpen = ref(false);
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
+function goTo(url: string) {
+  window.open(url, '_blank');
 }
 </script>
