@@ -1,40 +1,26 @@
-# Portfolio Pessoal (portfolio-ezequielmuller)
+# Portfolio Pessoal - Ezequiel H. G. Muller
 
-Portfolio Pessoal - Ezequiel H. G. Muller
+Este é o meu portfólio pessoal desenvolvido com [Vue 3](https://vuejs.org/) e [Quasar Framework](https://quasar.dev/), onde apresento meus projetos,
+habilidades e formas de contato de maneira moderna, responsiva e minimalista.
 
-## Install the dependencies
+## 📦 Instalação
+
+### 1. Instale as dependências do projeto
+
 ```bash
 yarn
-# or
+# ou
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### 2. Instale o Quasar Framework
+
+```bash
+npm install -g @quasar/cli
+```
+
+### 3. Rode a aplicação
+
 ```bash
 quasar dev
 ```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
