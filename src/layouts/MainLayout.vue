@@ -9,7 +9,7 @@
           style="width: 60px; height: 30px; border-radius: 30px;" />
         <q-separator vertical class="q-ml-sm" color="white" />
         <q-toolbar-title class="text-justify text-white"> Ezequiel Muller - Web Developer </q-toolbar-title>
-        <div class="row items-center q-gutter-sm">
+        <!-- <div class="row items-center q-gutter-sm">
           <q-btn flat dense round icon="mdi-linkedin" aria-label="LinkedIn"
             @click="goTo('https://www.linkedin.com/in/ezequielhgmuller/')" />
           <q-btn flat dense round icon="mdi-instagram" aria-label="Instagram"
@@ -17,7 +17,7 @@
           <q-btn flat dense round icon="mdi-github" aria-label="GitHub"
             @click="goTo('https://github.com/ezequielmuller')" />
           <q-btn flat dense round icon="mdi-email" aria-label="Email" @click="goTo('mailto:zikimuller017@gmail.com')" />
-        </div>
+        </div> -->
       </q-toolbar>
       <q-separator color="grey" class="q-mr-md q-ml-md" />
     </q-header>
@@ -76,8 +76,7 @@ import NormalPage from 'src/pages/NormalPage.vue';
 const $q = useQuasar();
 const mobile = computed(() => $q.screen.lt.sm);
 
-
-function goTo(url: string) {
-  window.open(url, '_blank');
-}
+// function goTo(url: string) {
+//   window.open(url, '_blank');
+// }
 </script>
