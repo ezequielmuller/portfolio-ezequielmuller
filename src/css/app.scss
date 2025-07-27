@@ -1,7 +1,17 @@
 // app global css in SCSS form
 * {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', 'Rubik', sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
+}
+
+// Efeito liquid glass
+.liquid-glass {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px); /* desfoque */
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }

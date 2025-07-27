@@ -28,55 +28,80 @@
   </q-layout>
 
   <!-- ===== LAYOUT MOBILE ===== -->
-  <q-layout v-else style="width: 100%;" view="lHh Lpr lFf" class="bg-primary">
-    <q-header>
-      <q-toolbar class="bg-primary text-white   q-pb-md q-pt-md row">
+  <q-layout v-else style="width: 100%;" view="lHh Lpr lFf" class="bg-secondary">
+    <q-header elevated class="liquid-glass"
+      style="background-color: rgba(30, 30, 30, 0.3); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+
+      <q-toolbar class="text-primary q-pb-md q-pt-md row">
         <q-btn flat round dense icon="menu">
-          <q-menu anchor="bottom right" self="top right">
-            <q-list style="min-width: 150px; border: 2px solid #454545;" class="bg-primary text-white">
+          <q-menu anchor="bottom right" self="top right" class="liquid-glass" transition-show="jump-down"
+            style="background-color: rgba(255, 255, 255, 0.08);" transition-hide="jump-up">
+            <q-list style="min-width: 150px;" class="text-primary">
               <q-item clickable v-ripple>
-                <q-item-section>Home</q-item-section>
+                <q-item-section class="text-primary">Home</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>Sobre</q-item-section>
+                <q-item-section class="text-primary">Sobre</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>Habilidades</q-item-section>
+                <q-item-section class="text-primary">Habilidades</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>Projetos</q-item-section>
+                <q-item-section class="text-primary">Projetos</q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>Contato</q-item-section>
+                <q-item-section class="text-primary">Contato</q-item-section>
               </q-item>
             </q-list>
           </q-menu>
         </q-btn>
 
-        <q-separator vertical color="grey-8" class="q-ml-md" />
+        <q-separator vertical class="q-ml-md bg-primary" />
 
-        <q-toolbar-title class="text-center text-white" style="padding-left: 0;">Ezequiel Muller - Web
-          Developer</q-toolbar-title>
+        <q-toolbar-title class="text-center text-bold text-primary " style="padding-left: 0; letter-spacing: 1px;">
+          Ezequiel Muller - Developer
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-page-container>
-      <MobilePage class="bg-secondary2 text-primary" />
+      <q-toggle v-model="tema" checked-icon="mdi-weather-night" unchecked-icon="mdi-white-balance-sunny" color="primary"
+        icon-color="secondary" size="60px" style="position: fixed; bottom: 16px; left: 8px; z-index: 1000;" />
+
+      <MobilePage />
+      <h1>asdasd</h1>
+      <h1>asdasd</h1>
+      <h1>asdasd</h1>
+      <h1>asdasd</h1>
+      <h1>asdasd</h1>
     </q-page-container>
   </q-layout>
 
 </template>
 
 <script setup lang="ts">
-import { useQuasar } from 'quasar';
-import { computed } from 'vue';
-import MobilePage from 'src/pages/MobilePage.vue';
-import NormalPage from 'src/pages/NormalPage.vue';
+import { useQuasar, setCssVar } from 'quasar'
+import { ref, watch, computed, onMounted } from 'vue'
+import MobilePage from 'src/pages/MobilePage.vue'
+import NormalPage from 'src/pages/NormalPage.vue'
 
-const $q = useQuasar();
-const mobile = computed(() => $q.screen.lt.sm);
+const $q = useQuasar()
+const mobile = computed(() => $q.screen.lt.sm)
 
-// function goTo(url: string) {
-//   window.open(url, '_blank');
-// }
+const tema = ref(localStorage.getItem('tema') === 'true')
+
+function aplicarTema(escuro: boolean) {
+  $q.dark.set(escuro)
+  localStorage.setItem('tema', escuro.toString())
+  setCssVar('primary', escuro ? '#e9e9e9' : '#1e1e1e')
+  setCssVar('secondary', escuro ? '#1e1e1e' : '#e9e9e9')
+}
+
+watch(tema, (valor) => {
+  aplicarTema(valor)
+})
+
+onMounted(() => {
+  aplicarTema(tema.value)
+})
 </script>
