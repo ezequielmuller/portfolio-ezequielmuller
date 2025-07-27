@@ -1,31 +1,43 @@
 <template>
   <q-page padding>
-    <div class="row justify-between q-col-gutter-xs q-mt-md q-mb-mt">
-      <div class="text-h6 text-white text-center flex flex-center col-6">
+    <div class=" row justify-between q-col-gutter-xs q-m-mt q-mx-xs">
+      <div class="text-h6 text-bold text-primary text-center flex flex-center col-6 ">
         {{ tag + 'Ezequiel Henrique Gazolla Muller />' }}
       </div>
       <div class="col-6 text-center">
-        <img src="icons/foto_perfil.jpg" alt="Foto de Perfil" class="rounded-full q-mr-lg"
-          style="width: 170px; height: 170px; border-radius: 40px; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);" />
+        <img src="icons/foto_perfil.jpg" alt="Foto de Perfil" class="q-mr-lg shadow-8 border-2px border-primary"
+          style="width: 170px; height: 170px; border-radius: 20px;" />
+
       </div>
     </div>
 
-    <q-separator color="grey q-mx-md q-my-md" />
+    <q-separator color="grey" class="q-mx-md q-my-md" />
 
-    <sobre />
+    <div class="row flex flex-center text-h6 text-bold">Sobre mim</div>
+    <SobreMobile id="sobreMobile" />
+    <q-separator color="grey" class="q-mx-md q-my-md" />
+
+    <div class="row flex flex-center text-h6 text-bold">Formações</div>
+    <ExperienciaMobile />
+    <q-separator color="grey" class="q-mx-md q-my-md" />
+
+    <div class="row flex flex-center text-h6 text-bold">Habilidades</div>
+    <HabilidadesMobile />
+    <q-separator color="grey" class="q-mx-md q-my-md" />
 
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-
+import { ref, onMounted } from 'vue';
+import SobreMobile from 'src/components/SobreMobile.vue';
+import ExperienciaMobile from 'src/components/ExperienciaMobile.vue';
+import HabilidadesMobile from 'src/components/HabilidadesMobile.vue';
 
 const tag = ref('');
 
-const onMounted = () => {
+
+onMounted(() => {
   tag.value = '<';
-}
-onMounted();
+});
 </script>

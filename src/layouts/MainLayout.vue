@@ -59,21 +59,19 @@
         <q-separator vertical class="q-ml-md bg-primary" />
 
         <q-toolbar-title class="text-center text-bold text-primary " style="padding-left: 0; letter-spacing: 1px;">
-          Ezequiel Muller - Developer
+          Ezequiel Muller
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
+    <q-page-container style="padding-top: 15px;">
       <q-toggle v-model="tema" checked-icon="mdi-weather-night" unchecked-icon="mdi-white-balance-sunny" color="primary"
         icon-color="secondary" size="60px" style="position: fixed; bottom: 16px; left: 8px; z-index: 1000;" />
 
       <MobilePage />
-      <h1>asdasd</h1>
-      <h1>asdasd</h1>
-      <h1>asdasd</h1>
-      <h1>asdasd</h1>
-      <h1>asdasd</h1>
+      <q-separator color="grey" class="q-mx-md q-my-md" />
+
+
     </q-page-container>
   </q-layout>
 
