@@ -11,27 +11,22 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'HabilidadesMobile',
-  data() {
-    return {
-      linguagens: [
-        { nome: 'GIT', img: 'icons/git.png' },
-        { nome: 'HTML', img: 'icons/html.png' },
-        { nome: 'CSS', img: 'icons/css.png' },
-        { nome: 'JavaScript', img: 'icons/javascript.png' },
-        { nome: 'Vue.js', img: 'icons/vue.png' },
-        { nome: 'React.js', img: 'icons/react.png' },
-        { nome: 'Java', img: 'icons/java.png' },
-        { nome: 'PostgreSQL', img: 'icons/postgres.png' },
-        { nome: 'MySQL', img: 'icons/mysql.png' },
-        { nome: 'Quasar', img: 'icons/quasar.png' },
-        { nome: 'Tailwind CSS', img: 'icons/tailwind.png' },
-      ]
-    };
-  }
-};
+<script setup lang="ts">
+interface Linguagem {
+  nome: string
+  img: string
+}
+
+const linguagens: Linguagem[] = [
+  { nome: 'GIT', img: 'icons/git.png' },
+  { nome: 'HTML', img: 'icons/html.png' },
+  { nome: 'CSS', img: 'icons/css.png' },
+  { nome: 'JavaScript', img: 'icons/javascript.png' },
+  { nome: 'Vue.js', img: 'icons/vue.png' },
+  { nome: 'React.js', img: 'icons/react.png' },
+  { nome: 'Quasar', img: 'icons/quasar.png' },
+  { nome: 'JAVA', img: 'icons/java.png' }
+]
 </script>
 
 <style scoped>
