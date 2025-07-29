@@ -68,7 +68,7 @@
       <q-toggle v-model="tema" checked-icon="mdi-weather-night" unchecked-icon="mdi-white-balance-sunny" color="primary"
         icon-color="secondary" size="60px" style="position: fixed; bottom: 16px; left: 8px; z-index: 1000;" />
 
-      <MobilePage />
+      <IndexPage />
 
     </q-page-container>
 
@@ -89,7 +89,7 @@
 <script setup lang="ts">
 import { useQuasar, setCssVar } from 'quasar'
 import { ref, watch, onMounted } from 'vue'
-import MobilePage from 'src/pages/MobilePage.vue'
+import IndexPage from 'src/pages/IndexPage.vue'
 // import NormalPage from 'src/pages/NormalPage.vue'
 
 const $q = useQuasar()

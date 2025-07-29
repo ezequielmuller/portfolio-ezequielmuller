@@ -14,34 +14,34 @@
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
     <div class="row flex flex-center text-h6 text-bold">Sobre mim</div>
-    <SobreMobile id="sobreMobile" />
+    <SobreComponent id="sobreMobile" />
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
     <div class="row flex flex-center text-h6 text-bold">Formações</div>
-    <ExperienciaMobile />
+    <ExperienciaComponent />
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
     <div class="row flex flex-center text-h6 text-bold">Habilidades</div>
-    <HabilidadesMobile />
+    <HabilidadesComponent />
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
     <div class="row flex flex-center text-h6 text-bold">Projetos</div>
-    <ProjetosMobile />
+    <ProjetosComponent />
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
     <div class="row flex flex-center text-h6 text-bold">Entre em Contato</div>
-    <ContatoMobile class="q-mt-md q-mb-mt" />
+    <ContatoComponent class="q-mt-md q-mb-mt" />
 
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import SobreMobile from 'src/components/SobreMobile.vue';
-import ExperienciaMobile from 'src/components/ExperienciaMobile.vue';
-import HabilidadesMobile from 'src/components/HabilidadesMobile.vue';
-import ProjetosMobile from 'src/components/ProjetosMobile.vue';
-import ContatoMobile from 'src/components/ContatoMobile.vue';
+import SobreComponent from 'src/components/SobreComponent.vue';
+import ExperienciaComponent from 'src/components/ExperienciaComponent.vue';
+import HabilidadesComponent from 'src/components/HabilidadesComponent.vue';
+import ProjetosComponent from 'src/components/ProjetosComponent.vue';
+import ContatoComponent from 'src/components/ContatoComponent.vue';
 
 const tag = ref('');
 
