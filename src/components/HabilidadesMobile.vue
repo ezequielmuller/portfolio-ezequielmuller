@@ -1,15 +1,19 @@
 <template>
   <div class="q-pa-md">
     <div class="row q-gutter-md justify-center">
-      <q-card v-for="lg in linguagens" :key="lg.nome" class="card column items-center justify-between">
-        <q-img :src="lg.img" style="width: 60px; height: 60px; margin-top: 12px" contain />
-        <div class="titulo q-mb-sm">
+      <q-col v-for="lg in linguagens" :key="lg.nome" cols="4" sm="2"
+        class="flex flex-center column items-center linguagem">
+        <div class="linguagem-foto">
+          <q-img :src="lg.img" style="width: 40px; height: 40px" contain />
+        </div>
+        <div class="linguagem-nome">
           {{ lg.nome }}
         </div>
-      </q-card>
+      </q-col>
     </div>
   </div>
 </template>
+
 
 <script setup lang="ts">
 interface Linguagem {
@@ -25,38 +29,47 @@ const linguagens: Linguagem[] = [
   { nome: 'Vue.js', img: 'icons/vue.png' },
   { nome: 'React.js', img: 'icons/react.png' },
   { nome: 'Quasar', img: 'icons/quasar.png' },
-  { nome: 'JAVA', img: 'icons/java.png' }
+  { nome: 'JAVA', img: 'icons/java.png' },
+  { nome: 'MySQL', img: 'icons/mysql.png' },
+  { nome: 'PostgreSQL', img: 'icons/postgres.png' },
 ]
 </script>
 
+
 <style scoped>
-.card {
-  width: 100px;
-  height: 120px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: transparent;
-  border-radius: 12px;
-  transition: transform 0.2s;
-  box-shadow: none;
-  padding: 4px 0;
+.linguagem {
+  transition: transform 0.3s ease;
+}
+
+.linguagem:hover {
+  transform: translateY(-5px);
+}
+
+.linguagem-foto {
+  width: 64px;
+  height: 64px;
+  background-color: #ffffff10;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  transition: background-color 0.3s;
+}
+
+body.body--dark .linguagem-foto {
+  background-color: #ffffff15;
+}
+
+.linguagem-nome {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd;
   text-align: center;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-body.body--dark .card {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.titulo {
-  font-size: 13px;
-  font-weight: 500;
+body.body--light .linguagem-nome {
   color: #333;
-}
-
-body.body--dark .titulo {
-  color: white;
 }
 </style>

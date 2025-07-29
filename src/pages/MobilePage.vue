@@ -25,6 +25,13 @@
     <HabilidadesMobile />
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
+    <div class="row flex flex-center text-h6 text-bold">Projetos</div>
+    <ProjetosMobile />
+    <q-separator color="grey" class="q-mx-md q-my-md" />
+
+    <div class="row flex flex-center text-h6 text-bold">Entre em Contato</div>
+    <ContatoMobile class="q-mt-md q-mb-mt" />
+
   </q-page>
 </template>
 
@@ -33,6 +40,8 @@ import { ref, onMounted } from 'vue';
 import SobreMobile from 'src/components/SobreMobile.vue';
 import ExperienciaMobile from 'src/components/ExperienciaMobile.vue';
 import HabilidadesMobile from 'src/components/HabilidadesMobile.vue';
+import ProjetosMobile from 'src/components/ProjetosMobile.vue';
+import ContatoMobile from 'src/components/ContatoMobile.vue';
 
 const tag = ref('');
 

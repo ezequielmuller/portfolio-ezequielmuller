@@ -1,5 +1,5 @@
 <template>
-  <!-- ===== LAYOUT NORMAL ===== -->
+  <!-- ===== LAYOUT NORMAL =====
   <q-layout v-if="!mobile" view="lHh Lpr lFf" class="bg-primary">
     <q-header class="bg-primary"
       style="max-width: 900px; margin: 24px auto 0 auto; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
@@ -9,7 +9,7 @@
           style="width: 60px; height: 30px; border-radius: 30px;" />
         <q-separator vertical class="q-ml-sm" color="white" />
         <q-toolbar-title class="text-justify text-white"> Ezequiel Muller - Web Developer </q-toolbar-title>
-        <!-- <div class="row items-center q-gutter-sm">
+         <div class="row items-center q-gutter-sm">
           <q-btn flat dense round icon="mdi-linkedin" aria-label="LinkedIn"
             @click="goTo('https://www.linkedin.com/in/ezequielhgmuller/')" />
           <q-btn flat dense round icon="mdi-instagram" aria-label="Instagram"
@@ -17,7 +17,7 @@
           <q-btn flat dense round icon="mdi-github" aria-label="GitHub"
             @click="goTo('https://github.com/ezequielmuller')" />
           <q-btn flat dense round icon="mdi-email" aria-label="Email" @click="goTo('mailto:zikimuller017@gmail.com')" />
-        </div> -->
+        </div>
       </q-toolbar>
       <q-separator color="grey" class="q-mr-md q-ml-md" />
     </q-header>
@@ -25,10 +25,10 @@
     <q-page-container>
       <NormalPage class="bg-secondary2 text-primary" />
     </q-page-container>
-  </q-layout>
+  </q-layout>-->
 
   <!-- ===== LAYOUT MOBILE ===== -->
-  <q-layout v-else style="width: 100%;" view="lHh Lpr lFf" class="bg-secondary">
+  <q-layout style="width: 100%;" view="lHh Lpr lFf" class="bg-secondary">
     <q-header elevated class="liquid-glass"
       style="background-color: rgba(30, 30, 30, 0.3); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
 
@@ -69,22 +69,31 @@
         icon-color="secondary" size="60px" style="position: fixed; bottom: 16px; left: 8px; z-index: 1000;" />
 
       <MobilePage />
-      <q-separator color="grey" class="q-mx-md q-my-md" />
-
 
     </q-page-container>
+
+
+    <div v-if="tema === true" class="bg-grey-10 text-white q-pa-md q-mt-md"
+      style="bottom: 0; width: 100%; text-align: center; font-size: 12px; z-index: 1000; border-top: 1px solid grey">
+      © 2025 Ezequiel Muller. Todos os direitos reservados.
+    </div>
+
+    <div v-else class="bg-primary text-white q-pa-md q-mt-md"
+      style="bottom: 0; width: 100%; text-align: center; font-size: 12px; z-index: 1000;">
+      © 2025 Ezequiel Muller. Todos os direitos reservados.
+    </div>
   </q-layout>
 
 </template>
 
 <script setup lang="ts">
 import { useQuasar, setCssVar } from 'quasar'
-import { ref, watch, computed, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import MobilePage from 'src/pages/MobilePage.vue'
-import NormalPage from 'src/pages/NormalPage.vue'
+// import NormalPage from 'src/pages/NormalPage.vue'
 
 const $q = useQuasar()
-const mobile = computed(() => $q.screen.lt.sm)
+// const mobile = computed(() => $q.screen.lt.sm)
 
 const tema = ref(localStorage.getItem('tema') === 'true')
 
@@ -93,6 +102,7 @@ function aplicarTema(escuro: boolean) {
   localStorage.setItem('tema', escuro.toString())
   setCssVar('primary', escuro ? '#e9e9e9' : '#1e1e1e')
   setCssVar('secondary', escuro ? '#1e1e1e' : '#e9e9e9')
+  console.log("TEMA APLICADO=>>", escuro)
 }
 
 watch(tema, (valor) => {
