@@ -1,33 +1,4 @@
 <template>
-  <!-- ===== LAYOUT NORMAL =====
-  <q-layout v-if="!mobile" view="lHh Lpr lFf" class="bg-primary">
-    <q-header class="bg-primary"
-      style="max-width: 900px; margin: 24px auto 0 auto; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-
-      <q-toolbar class="bg- text-white q-pa-md">
-        <img src="icons/foto_perfil.jpg" alt="Logo" class="q-mr-md"
-          style="width: 60px; height: 30px; border-radius: 30px;" />
-        <q-separator vertical class="q-ml-sm" color="white" />
-        <q-toolbar-title class="text-justify text-white"> Ezequiel Muller - Web Developer </q-toolbar-title>
-         <div class="row items-center q-gutter-sm">
-          <q-btn flat dense round icon="mdi-linkedin" aria-label="LinkedIn"
-            @click="goTo('https://www.linkedin.com/in/ezequielhgmuller/')" />
-          <q-btn flat dense round icon="mdi-instagram" aria-label="Instagram"
-            @click="goTo('https://instagram.com/ezequielmuller__')" />
-          <q-btn flat dense round icon="mdi-github" aria-label="GitHub"
-            @click="goTo('https://github.com/ezequielmuller')" />
-          <q-btn flat dense round icon="mdi-email" aria-label="Email" @click="goTo('mailto:zikimuller017@gmail.com')" />
-        </div>
-      </q-toolbar>
-      <q-separator color="grey" class="q-mr-md q-ml-md" />
-    </q-header>
-
-    <q-page-container>
-      <NormalPage class="bg-secondary2 text-primary" />
-    </q-page-container>
-  </q-layout>-->
-
-  <!-- ===== LAYOUT MOBILE ===== -->
   <q-layout style="width: 100%;" view="lHh Lpr lFf" class="bg-secondary">
     <q-header elevated class="liquid-glass"
       style="background-color: rgba(30, 30, 30, 0.3); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">

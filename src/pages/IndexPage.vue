@@ -1,13 +1,25 @@
 <template>
   <q-page padding>
-    <div class=" row justify-between q-col-gutter-xs q-m-mt q-mx-xs">
-      <div class="text-h6 text-bold text-primary text-center flex flex-center col-6 ">
-        {{ tag + 'Ezequiel Henrique Gazolla Muller />' }}
-      </div>
-      <div class="col-6 text-center">
-        <img src="icons/foto_perfil.jpg" alt="Foto de Perfil" class="q-mr-lg shadow-8 border-2px border-primary"
-          style="width: 170px; height: 170px; border-radius: 20px;" />
+    <div class="q-mt-md q-px-sm">
+      <div class="q-gutter-md row items-center justify-center q-col-gutter-md">
 
+        <div class="text-primary text-center flex flex-center"
+          :class="$q.platform.is.mobile ? 'text-h6 col-5 ' : 'text-h4 col-3'" style="font-weight: bold;">
+          <div>
+            <span class="text-grey-7" style="font-family: monospace;">&lt;</span>
+            <span class="text-primary">Ezequiel Henrique Gazolla Muller</span>
+            <span class="text-grey-7" style="font-family: monospace;">/&gt;</span>
+          </div>
+        </div>
+
+        <div class="flex flex-center">
+          <q-img src="icons/foto_perfil.jpg" alt="Foto de Perfil" :style="{
+            width: $q.platform.is.mobile ? '190px' : '270px',
+            height: $q.platform.is.mobile ? '190px' : '270px',
+            borderRadius: '15px',
+            border: '2px solid ',
+          }" class="shadow-8" />
+        </div>
       </div>
     </div>
 
@@ -36,17 +48,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { useQuasar } from 'quasar';
 import SobreComponent from 'src/components/SobreComponent.vue';
 import ExperienciaComponent from 'src/components/ExperienciaComponent.vue';
 import HabilidadesComponent from 'src/components/HabilidadesComponent.vue';
 import ProjetosComponent from 'src/components/ProjetosComponent.vue';
 import ContatoComponent from 'src/components/ContatoComponent.vue';
 
-const tag = ref('');
+const $q = useQuasar();
+
+// const mobile = $q.platform.is.mobile;
+//const mobile = $q.screen.lt.sm;
 
 
-onMounted(() => {
-  tag.value = '<';
-});
+
 </script>
