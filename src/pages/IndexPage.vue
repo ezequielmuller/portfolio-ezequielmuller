@@ -25,13 +25,29 @@
 
     <q-separator color="grey" class="q-mx-md q-my-md" />
 
-    <div class="row flex flex-center text-h6 text-bold">Sobre mim</div>
-    <SobreComponent id="sobreMobile" />
-    <q-separator color="grey" class="q-mx-md q-my-md" />
+    <div v-if="$q.screen.lt.md">
+      <div class="row flex flex-center text-h6 text-bold">Sobre mim</div>
+      <SobreComponent id="sobreMobile" />
+      <q-separator color="grey" class="q-mx-md q-my-md" />
 
-    <div class="row flex flex-center text-h6 text-bold">Formações</div>
-    <ExperienciaComponent />
-    <q-separator color="grey" class="q-mx-md q-my-md" />
+      <div class="row flex flex-center text-h6 text-bold">Formações</div>
+      <ExperienciaComponent />
+      <q-separator color="grey" class="q-mx-md q-my-md" />
+    </div>
+
+    <div v-else>
+      <div class="row q-col-gutter-md items-start">
+        <div class="col-6">
+          <div class="row flex flex-center text-h6 text-bold">Sobre mim</div>
+          <SobreComponent />
+        </div>
+        <div class="col-6">
+          <div class="row flex flex-center text-h6 text-bold">Formações</div>
+          <ExperienciaComponent />
+        </div>
+      </div>
+      <q-separator color="grey" class="q-mx-md q-my-md" />
+    </div>
 
     <div class="row flex flex-center text-h6 text-bold">Habilidades</div>
     <HabilidadesComponent />
@@ -56,10 +72,4 @@ import ProjetosComponent from 'src/components/ProjetosComponent.vue';
 import ContatoComponent from 'src/components/ContatoComponent.vue';
 
 const $q = useQuasar();
-
-// const mobile = $q.platform.is.mobile;
-//const mobile = $q.screen.lt.sm;
-
-
-
 </script>
